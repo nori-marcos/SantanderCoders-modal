@@ -5,49 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modal</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css" />
     <style>
       * {
         /* border: red solid 1px; */
       }
 
-      :root{
+      html,
+      body {
         font-family: Arial, Helvetica, sans-serif;
-      }
-
-      html, body {
-        background-color: #E9EDFC;
+        background-color: #282a35;
+        color: #062d2d;
         max-width: 1200px;
         margin: 0 auto;
         text-align: center;
       }
 
-      .btn {
-        margin-top: 10px;
-        border-radius: 10px;
-        width: 50%;
-        background-color: #0D2059;
-        color: #E9EDFC;
+      button {
+        border-radius: 20px;
+        width: 100px;
+        height: 40px;
+        background-color: #138686;
+        font-weight: bold;
+        color: white;
+        border: transparent;
       }
 
-      .btn-open-modal{
+      .btn-open-modal {
+        width: 300px;
         display: block;
         margin: auto;
       }
 
-      .btns-modal{
-        display: inline-block
-      }
-
-      .btn-cancel{
-        background-color: #DF20AF;
+      .btn-cancel {
+        background-color: #dfaf20;
       }
 
       .modal {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background-color: #FFFFFF;
+        background-color: #e9fcfc;
         position: fixed;
         opacity: 1;
         height: 300px;
@@ -61,31 +59,60 @@
         opacity: 0;
         pointer-events: none;
       }
+
+      fieldset {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      legend {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 10px;
+      }
+
+      input {
+        width: 80%;
+      }
+
+      input,
+      label {
+        display: block;
+        margin: 10px auto;
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <button type="button" class="btn btn-open-modal"">
-        Open Modal
-      </button>
+      <button type="button" class="btn-open-modal">Open Modal</button>
       <div class="modal">
-          <form>
-              <input
-                type="email"
-                class="form-control"
-                required
-                placeholder="Digite o seu email aqui"
-                id="userEmail"
-              />
-            </form>
-            <div class="btns-modal">
-              <button class="btn" type="button">Ok</button>
-              <button class="btn btn-cancel" type="button">Cancelar</button>
-            </div>
+        <form>
+          <fieldset>
+            <legend>Preencha seus dados</legend>
+            <label for="userFirstName">
+              Nome
+              <input type="text" class="input" id="userFirstName" />
+            </label>
+
+            <label for="userLastName">
+              Sobrenome
+              <input type="text" class="input" id="userLastName" />
+            </label>
+
+            <label for="userEmail">
+              E-mail
+              <input type="email" class="input" required id="userEmail" />
+            </label>
+          </fieldset>
+        </form>
+
+        <div class="btns-modal">
+          <button type="button">Ok</button>
+          <button class="btn-cancel" type="button">Cancelar</button>
+        </div>
       </div>
     </div>
-
-    <script src="main.js"></script>
+    <script></script>
   </body>
 </html>
